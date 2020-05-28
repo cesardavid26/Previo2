@@ -8,17 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ClienteController
+ * Servlet implementation class ServicioController
  */
-@WebServlet("/ClienteController")
-public class ClienteController extends HttpServlet {
+@WebServlet("/ServicioController")
+public class ServicioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ClienteController() {
+    public ServicioController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,25 +35,7 @@ public class ClienteController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String accion = request.getParameter("accion");	
-		switch (accion) {
-		case "ingresar":
-			int id = Integer.parseInt(request.getParameter("codigo"));
-			String nombre = request.getParameter("nombre");
-			String email = request.getParameter("email");
-			String clave =   request.getParameter("clave");
-			int semestre = Integer.parseInt(request.getParameter("semestre"));
-			
-			ca.setCodigo(codigo);
-			ca.setCredito(credito);
-			ca.setNombre(nombre);
-			ca.setSemestre(semestre);
-			
-			cDao.registrar(ca);
-			response.sendRedirect("index.jsp");
-			break;
-			
-			
+		doGet(request, response);
 	}
 
 }

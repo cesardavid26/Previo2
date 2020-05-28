@@ -13,18 +13,19 @@ EntityManager em=null;
 		
 		
 	}
-	public void registrar (Servicio serv) {
+	public void registrar (Servicio servicio) {
 		 try {
 			 em.getTransaction().begin();
-			 em.persist(serv);
+			 em.persist(servicio);
 			 em.getTransaction().commit();
 			 } catch (Exception e) {
 			 e.printStackTrace();
 			 }finally {
-			 em.close();
+			 
 			 }
 		
 		 
 		 
 	 }
+	
 }

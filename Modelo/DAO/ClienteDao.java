@@ -21,10 +21,62 @@ EntityManager em=null;
 			 } catch (Exception e) {
 			 e.printStackTrace();
 			 }finally {
-			 em.close();
+			 
 			 }
 		
 		 
+		 
+	 }
+	public void actualizar (Cliente cliente) {
+		 try {
+			 em.getTransaction().begin();
+			 em.merge(cliente);
+			 em.getTransaction().commit();
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			 }finally {
+			
+			 }
+		
+		 
+		 
+	 }
+	 
+	 public void eliminar (int id){
+		 try {
+
+			 Cliente u = em.find(Cliente.class, id);
+			 em.getTransaction().begin();
+			 em.remove(u);
+			 em.getTransaction().commit();
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			 }finally {
+			 }
+		
+		 
+		 
+	 }
+	 
+	 public Cliente buscar (Integer m) {
+		 Cliente x = null;
+		 try {
+			 em.getTransaction().begin();
+			 Cliente u = em.find(Cliente.class, m);
+			 em.getTransaction().commit();
+			 //System.out.println(u.getUsuario());
+			 x=u;
+			  
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			 }finally {
+
+			 }
+		return x;
+		
+		 
+		 
+	 }
 		 
 	 }
 

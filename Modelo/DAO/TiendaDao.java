@@ -13,15 +13,30 @@ EntityManager em=null;
 		
 		
 	}
-	public void registrar (Tienda ti) {
+	public void registrar (Tienda tienda) {
 		 try {
 			 em.getTransaction().begin();
-			 em.persist(ti);
+			 em.persist(tienda);
 			 em.getTransaction().commit();
 			 } catch (Exception e) {
 			 e.printStackTrace();
 			 }finally {
-			 em.close();
+			 
+			 }
+		
+		 
+		 
+	 }
+	
+	 public void actualizar (Tienda tienda) {
+		 try {
+			 em.getTransaction().begin();
+			 em.merge(tienda);
+			 em.getTransaction().commit();
+			 } catch (Exception e) {
+			 e.printStackTrace();
+			 }finally {
+			
 			 }
 		
 		 

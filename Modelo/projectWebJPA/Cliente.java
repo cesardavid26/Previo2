@@ -27,6 +27,14 @@ public class Cliente implements Serializable {
 	@ManyToMany(mappedBy="clientes")
 	private List<Tienda> tiendas;
 
+	public Cliente(int id, String clave, String email, String nombre) {
+		super();
+		this.id = id;
+		this.clave = clave;
+		this.email = email;
+		this.nombre = nombre;
+	}
+
 	public Cliente() {
 	}
 
