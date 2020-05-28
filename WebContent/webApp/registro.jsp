@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Registro de Tienda</h3>
-              <form method="post"action="TiendaControl">
+              <form method="post"action="../TiendaControl">
                 <div class="form-label-group">
                   <input type="text" id="inputNombre" class="form-control" name="nombre" placeholder="Nombre" required autofocus>
                   <label for="inputNombre">Nombre</label>
