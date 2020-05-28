@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.ServicioDao;
+import projectWebJPA.Servicio;
+
 /**
  * Servlet implementation class ServicioController
  */
@@ -35,7 +38,26 @@ public class ServicioController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+String accion= request.getParameter("accion");
+		
+		switch (accion) {
+		case "registro":
+			String nombre = request.getParameter("nombre");
+			String descripcion = request.getParameter("descripcion");
+
+			
+			ServicioDao tD = new ServicioDao();
+				Servicio t = new Servicio();
+				t.setNombre(nombre);
+				t.setDescripcion(descripcion);
+				tD.registrar(t);
+				request.getRequestDispatcher("/regServicio.jsp").forward(request, response);
+				
+				
+			break;
 	}
 
-}
+	}
+	}
+
+

@@ -9,6 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Table(name = "servicio")
 @NamedQuery(name="Servicio.findAll", query="SELECT s FROM Servicio s")
 public class Servicio implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -16,9 +17,11 @@ public class Servicio implements Serializable {
 	@Id
 	private int id;
 
-	@Lob
+
+	@Column(name = "descripcion")
 	private String descripcion;
 
+	@Column(name = "nombre")
 	private String nombre;
 
 	//bi-directional many-to-one association to Tienda

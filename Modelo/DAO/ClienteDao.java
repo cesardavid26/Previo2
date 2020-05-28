@@ -2,6 +2,7 @@ package DAO;
 
 import javax.persistence.EntityManager;
 
+
 import projectWebJPA.Cliente;
 import util.Conexion;
 
@@ -80,4 +81,4 @@ EntityManager em=null;
 		 
 	 }
 
-}
+
